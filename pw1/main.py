@@ -12,3 +12,10 @@ def input_product():
 
 products = input_product()
 print(products)
+
+def calculate_stock_value(product_info):
+    for product, details in product_info.items():
+        stock_value = details['Stock'] * details['Prise']
+        print(f"Вартість залишку для {product}: {stock_value}")
+
+calculate_stock_value(products)
