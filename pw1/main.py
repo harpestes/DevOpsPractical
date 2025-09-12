@@ -30,3 +30,12 @@ def calculate_discount(product_info):
             print(f"For {product} discount not applied, because stock is {details['Stock']} items.")
 
 calculate_discount(products)
+
+def print_product_names(product_names, index=0):
+    if index < len(product_names):
+        print(product_names[index])
+        print_product_names(product_names, index + 1)
+
+
+product_names = list(products.keys())
+print_product_names(product_names)
