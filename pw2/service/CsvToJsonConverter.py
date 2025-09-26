@@ -1,5 +1,5 @@
 import json
-from CsvReader import CsvReader
+from pw2.reader.CsvReader import CsvReader
 
 class CsvToJsonConverter(CsvReader):
     def convert_to_json(self, path, json_path):

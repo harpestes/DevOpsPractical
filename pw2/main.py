@@ -1,6 +1,6 @@
-from JsonReader import JsonReader
-from CsvToJsonConverter import CsvToJsonConverter
-from StudentFinder import StudentFinder
+from pw2.reader.JsonReader import JsonReader
+from pw2.service.CsvToJsonConverter import CsvToJsonConverter
+from pw2.service.StudentFinder import StudentFinder
 
 if __name__ == "__main__":
     csv_url = "https://informer.com.ua/dut/python/import/st_gt.csv"
