@@ -1,3 +1,4 @@
+from JsonReader import JsonReader
 from CsvToJsonConverter import CsvToJsonConverter
 
 if __name__ == "__main__":
@@ -7,3 +8,5 @@ if __name__ == "__main__":
     converter = CsvToJsonConverter()
     converter.read_and_convert(csv_url, json_path)
 
+    json_reader = JsonReader()
+    json_reader.display_data(json_path)
