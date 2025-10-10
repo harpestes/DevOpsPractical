@@ -1,7 +1,7 @@
 from tkinter import *
-import random
 import time
 
+from pw3.Catcher import Catcher
 from pw3.Score import Score
 
 tk = Tk()
@@ -13,8 +13,6 @@ canvas = Canvas(tk, width=500, height=400, bd=0, highlightthickness=0)
 canvas.pack()
 
 score = Score(canvas)
+catcher = Catcher(canvas, 'blue', score)
 tk.update()
 time.sleep(1)
-
-tk.update()
-time.sleep(3)
