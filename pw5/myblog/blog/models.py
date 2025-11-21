@@ -34,5 +34,8 @@ class Post(models.Model):
             models.Index(fields=['-publish']),
         ]
 
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', args=[self.id])
+
     def __str__(self):
         return self.title
