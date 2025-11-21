@@ -13,4 +13,10 @@
   <div class="body">
     {{ post.body|linebreaks }}
   </div>
+
+  <p>
+      <a href="{% url 'blog:post_share' post.id %}">
+        Поділитися
+      </a>
+  </p>
 {% endblock %}
