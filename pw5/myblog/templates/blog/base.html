@@ -13,8 +13,10 @@
     <div id="sidebar">
         <h2>My blog</h2>
         <p>This is my blog.<br>
-        I've already written {% total_posts %} posts.
+            I've already written {% total_posts %} posts.
         </p>
+        <h3>Останні пости</h3>
+        {% show_latest_posts 3 %}
     </div>
 </body>
 </html>
