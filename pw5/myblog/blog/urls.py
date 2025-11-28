@@ -1,9 +1,16 @@
 from django.urls import path
 from . import views
+from django.contrib.sitemaps import Sitemap
+from django.contrib.sitemaps.views import sitemap
+from .sitemaps import PostSitemap
 
 app_name = 'blog'
+sitemaps = {
+    'posts': PostSitemap,
+}
 
 urlpatterns = [
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('', views.PostListView.as_view(), name='post_list'),
     path('<int:year>/<int:month>/<int:day>/<slug:post>/',
          views.post_detail,
