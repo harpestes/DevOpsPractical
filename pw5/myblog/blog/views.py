@@ -4,12 +4,26 @@ from django.core.mail import send_mail
 from .forms import EmailPostForm, CommentForm
 from .models import Post
 from django.views.decorators.http import require_POST
+from taggit.models import Tag
 
 class PostListView(ListView):
     queryset = Post.published.all()
     context_object_name = 'posts'
     paginate_by = 3
     template_name = 'blog/post/list.html'
+
+    def get_queryset(self):
+        qs = super().get_queryset()
+
+        tag_slug = self.kwargs.get('tag_slug')
+
+        if tag_slug:
+            self.tag = get_object_or_404(Tag, slug=tag_slug)
+            qs = qs.filter(tags__in=[self.tag])
+        else:
+            self.tag = None
+
+        return qs
 
 
 def post_detail(request, year, month, day, post):
